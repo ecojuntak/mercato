@@ -5,7 +5,7 @@ export default() => {
     baseURL: process.env.VUE_APP_API_BASE_URL,
     headers: {
       'App-Token': process.env.VUE_APP_API_TOKEN,
-      'Authorization': 'Bearer ' + localStorage.getItem('api-key')
+      'Authorization': 'Bearer ' + localStorage.getItem('api_key')
     }
   })
 }
