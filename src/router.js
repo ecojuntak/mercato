@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './components/Pages/Homepage'
+import AllProduct from './components/Pages/AllProduct'
+import DetailProduct from'./components/Pages/DetailProduct'
+import Register from './components/Pages/Auth/Reg/Register'
+
 
 Vue.use(Router)
 
@@ -12,6 +16,21 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path:"/products",
+      name:"AllProduct",
+      component: AllProduct
+    },
+    {
+      path:'/detail',
+      name: 'DetailProduct',
+      component: DetailProduct
+    },
+    {
+      path:'/register',
+      name:'Register',
+      component: Register
     },
     {
       path: '/about',
