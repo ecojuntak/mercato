@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './components/Pages/Homepage'
-import AllProduct from './components/Pages/AllProduct'
-import DetailProduct from'./components/Pages/DetailProduct'
-import Register from './components/Pages/Auth/Reg/Register'
+import Home from './views/Homepage'
+import AllProduct from './views/AllProduct'
+import DetailProduct from'./views/DetailProduct'
+import Register from './views/Register'
+import Cart from './views/Customer/CartPage'
 
 
 Vue.use(Router)
@@ -18,7 +19,7 @@ export default new Router({
       component: Home
     },
     {
-      path:"/products",
+      path:'/products',
       name:"AllProduct",
       component: AllProduct
     },
@@ -31,6 +32,11 @@ export default new Router({
       path:'/register',
       name:'Register',
       component: Register
+    },
+    {
+      path:'/cart',
+      name:'Cart',
+      component:Cart
     },
     {
       path: '/about',

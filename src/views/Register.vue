@@ -65,10 +65,7 @@
 </template>
 
 <script>
-var $myGroup = $("#myGroup");
-$myGroup.on("show.bs.collapse", ".collapse", function() {
-  $myGroup.find(".collapse.show").collapse("hide");
-});
+
 
 import regcustomer from '@/components/Pages/Auth/Reg/RegCustomer';
 import regmerchant from '@/components/Pages/Auth/Reg/RegMerchant';
