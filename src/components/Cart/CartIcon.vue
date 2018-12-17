@@ -1,8 +1,8 @@
 <template>
 
-    <a href="/carts">
+    <a href="/cart">
       <transition name="cart">
-         <img src="@/static/icon/icons8-shopping-cart-64.png" style="height: 35px;"/>   
+         <img src="@/static/icon/icons8-shopping-cart-64.png" style="height: 35px;margin-right:5px"/>   
         <!--<img src="/user-assets/img/core-img/bag.svg" style="width: 23px" v-if="show">-->
       </transition>
       <span style="display:inline-block;font-size: large;

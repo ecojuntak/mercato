@@ -7,7 +7,6 @@
           <router-link to="/products">
             <a style="color: -webkit-link">Lihat Semua Produk</a>
           </router-link>
-
         </h6>
       </div>
       <div class="card-body globalcardbody">
