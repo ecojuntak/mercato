@@ -8,6 +8,7 @@ import Cart from '../views/Customer/CartPage'
 import Shipment from '../views/Customer/Shipment'
 import Payment from '../views/Customer/Payment' 
 import Dashboard from '../views/Merchant/Dashboard'
+import ProductCreate from '../views/Merchant/CreateProduct'
 
 
 
@@ -28,7 +29,7 @@ export default new Router({
       component: AllProduct
     },
     {
-      path:'/detail',
+      path:'/products/detail',
       name: 'DetailProduct',
       component: DetailProduct
     },
@@ -56,6 +57,11 @@ export default new Router({
       path: '/merchant',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '/product/create',
+      name: 'ProductCreate',
+      component: ProductCreate
     },
   
     // {

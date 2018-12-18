@@ -14,7 +14,7 @@
           <swiper :options="swiperOption">
             <swiper-slide>
               <div class="card product ">
-                <router-link to="/detail">
+                <router-link to="/products/detail">
                   <div class="imgwrapper">
                     <img  src="@/static/img/placeholder/banner_register.gif" alt>
                   </div>

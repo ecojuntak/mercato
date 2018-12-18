@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import NewAddress from '@/components/Shipment/NewAddress'
+import NewAddress from '@/components/Customer/Shipment/NewAddress'
 export default {
     components:{
         NewAddress

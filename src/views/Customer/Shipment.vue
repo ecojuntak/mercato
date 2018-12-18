@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import Address from '@/components/Shipment/Address'
-import CartDetail from '@/components/Shipment/CartDetail'
-import PaymentDetail from '@/components/Shipment/PaymentDetail'
+import Address from '@/components/Customer/Shipment/Address'
+import CartDetail from '@/components/Customer/Shipment/CartDetail'
+import PaymentDetail from '@/components/Customer/Shipment/PaymentDetail'
 export default {
     components:{
         Address, CartDetail, PaymentDetail
