@@ -17,7 +17,7 @@
 
 
 <script>
-  import TopBanner from "@/components/Swipper/Mainbanner"
+  import TopBanner from "@/components/Swipper/Carousel"
   import ProductSlider from "@/components/Swipper/ProductSlider"
   import InspirasiBanner from "@/components/Swipper/InspirasiBanner"
 
