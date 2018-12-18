@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-container">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" ref="mySwiper">
       <swiper-slide>
         <img alt="imgslider" src="@/static/img/placeholder/banner_register.gif">
       </swiper-slide>
@@ -13,57 +13,53 @@
 </template>
 
 <script>
-    import 'swiper/dist/css/swiper.css'
+import "swiper/dist/css/swiper.css";
+import { swiper, swiperSlide} from "vue-awesome-swiper";
 
-    import { swiper, swiperSlide } from 'vue-awesome-swiper'
-    export default {
-        name: "Mainbanner",
-        components:{
-          swiper, swiperSlide
+export default {
+  name: "Mainbanner",
+  components: {
+    swiper,
+    swiperSlide
+  },
+  data() {
+    return {
+      swiperOption: {
+        pagination: {
+          el: ".swiper-pagination"
         },
-        data(){
-            return{
-                swiperOption:{
-                    pagination: {
-                        el: '.swiper-pagination'
-                    },
-                    spaceBetween:10,
-                    loop:true
-                },
-                items:[
-                  {}
-                ]
-            }
-        },
-        computed:{
-            swiper(){
-                return this.$refs.mySwiper.swiper
-            }
-        },
-        mounted(){
-            console.log('this is current swiper instance object', this.swiper)
-            this.swiper.slideTo(3, 1000, false)
-        }
+        spaceBetween: 10,
+        loop: true
+      },
+      items: [{}]
+    };
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
     }
+  },
+  mounted() {
+    this.swiper.slideTo(3, 1000, false);
+  }
+};
 </script>
 
 <style scoped>
-  .el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 150px;
-    margin: 0;
-  }
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
+}
 
+img {
+  width: 100%;
+  height: auto;
+}
 
-  img{
-    width: 100%;
-    height: auto;
-  }
-
-  .swiper-container{
-    width: 100%;
-  }
-
+.swiper-container {
+  width: 100%;
+}
 </style>
