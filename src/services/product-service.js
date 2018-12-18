@@ -6,5 +6,8 @@ export default {
   },
   getNewProduct() {
     return privateApi().get('new-products');
+  },
+  getAllProducts() {
+    return privateApi().get('all-products');
   }
 }

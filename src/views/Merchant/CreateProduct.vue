@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-<SideBar/> 
+      <SideBar/>
       <div class="col-md-9 crudproduk mt-3" style="display: grid">
         <div class="pull-right">
           <div class="card globalcard mt-0">
@@ -9,13 +9,7 @@
               <h6>Tambah Produk Baru</h6>
             </div>
             <div class="card-body">
-              <form
-                class="form-group"
-                method="POST"
-               
-                enctype="multipart/form-data"
-              >
-                
+              <form class="form-group" method="POST" enctype="multipart/form-data">
                 <div class="form-group row">
                   <div class="input-group mb-3">
                     <label class="col-sm-3 col-form-label">
@@ -26,9 +20,7 @@
                     </label>
                     <div class="col-sm-9">
                       <div class="upload-btn-wrapper">
-                        <button class="btn-upcus">
-                          
-                        </button>
+                        <button class="btn-upcus"></button>
                         <input id="files" name="images[]" multiple type="file">
                       </div>
                       <div id="result" class="row mt-4"></div>
@@ -177,45 +169,12 @@
 </template>
 
 <script>
-import SideBar from '@/components/Merchant/SideBar'
+import SideBar from "@/components/Merchant/SideBar";
 export default {
-    name:'CreateProduct',
-    components:{
-        SideBar
-    }
-}
-
-window.onload = function () {
-        if (window.File && window.FileList && window.FileReader) {
-            var filesInput = document.getElementById("files");
-
-            filesInput.addEventListener("change", function (event) {
-                var files = event.target.files;
-                var output = document.getElementById("result");
-
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-
-                    if (!file.type.match('image')) continue;
-
-                    var picReader = new FileReader();
-                    picReader.addEventListener("load", function (event) {
-                        var picFile = event.target;
-                        var div = document.createElement("div");
-                        div.className = "col-4 col-md-3 col-lg-3"
-                        div.innerHTML = "<div class='single-product-wrapper'> <div class='product-img'> <img src='"
-                            + picFile.result + "'> </div> </div>";
-
-                        output.insertBefore(div, null);
-                    });
-
-                    picReader.readAsDataURL(file);
-                }
-
-            });
-        } else {
-            console.log("Your browser does not support File API");
-        }
-    }
+  name: "CreateProduct",
+  components: {
+    SideBar
+  }
+};
 </script>
 
