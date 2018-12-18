@@ -1,12 +1,9 @@
 <template>
-
     <a href="/carts">
       <transition name="cart">
          <img src="@/static/icon/icons8-shopping-cart-64.png" style="height: 35px;"/>   
-        <!--<img src="/user-assets/img/core-img/bag.svg" style="width: 23px" v-if="show">-->
       </transition>
-      <span style="display:inline-block;font-size: large;
-    color: #4b1815;">0</span>
+      <span style="display:inline-block;font-size: large;color: #4b1815;">0</span>
     </a>
 
 </template>
