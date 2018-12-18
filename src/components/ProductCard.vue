@@ -1,6 +1,6 @@
 <template>
   <div class="card product">
-    <router-link :to="'/products/detail/' + id ">
+    <router-link :to="'/products/' + id ">
       <div class="imgwrapper">
         <img :src="assetServerURL + image">
       </div>

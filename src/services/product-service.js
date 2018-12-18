@@ -9,5 +9,8 @@ export default {
   },
   getAllProducts() {
     return privateApi().get('all-products');
+  },
+  getProduct(params) {
+    return privateApi().get('products/' + params);
   }
 }
