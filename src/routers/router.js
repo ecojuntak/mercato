@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '../views/Homepage'
 // Customer
 import AllProduct from '../views/AllProduct'
-import DetailProduct from'../views/DetailProduct'
+import ProductDetail from'../views/ProductDetail'
 import Register from '../views/Register'
 import Cart from '../views/Customer/CartPage'
 import Shipment from '../views/Customer/Shipment'
@@ -12,8 +12,6 @@ import Order from '../views/Customer/Order'
 // Merchant
 import Dashboard from '../views/Merchant/Dashboard'
 import ProductCreate from '../views/Merchant/CreateProduct'
-
-
 
 Vue.use(Router)
 
@@ -32,9 +30,9 @@ export default new Router({
       component: AllProduct
     },
     {
-      path:'/products/detail',
-      name: 'DetailProduct',
-      component: DetailProduct
+      path:'/products/:id',
+      name: 'ProductDetail',
+      component: ProductDetail
     },
     {
       path:'/register',
