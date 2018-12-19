@@ -10,21 +10,23 @@
                   class="imgwrapper mb-3"
                   style="padding: 0px;"
                 ><img src="" alt="Card image cap" style="object-fit: scale-down"></div>
-                <h6>Nama user</h6>
+                <h6>Nama suser</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="order-list-customer" class="col-md-9 crudproduk">
-      <order-list-customer-page :user-id="{{ Auth::user()->id }}"/>
-    </div>
+    <OrderList/> 
   </div>
 </template>
 <script>
+import OrderList from '@/components/Customer/Orderlist'
 export default {
-  name:'Order'
+  name:'Order',
+  components:{
+    OrderList
+  }
 }
 </script>
 

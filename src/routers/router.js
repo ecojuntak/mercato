@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Homepage'
+// Customer
 import AllProduct from '../views/AllProduct'
 import DetailProduct from'../views/DetailProduct'
 import Register from '../views/Register'
 import Cart from '../views/Customer/CartPage'
 import Shipment from '../views/Customer/Shipment'
 import Payment from '../views/Customer/Payment' 
+import Order from '../views/Customer/Order'
+// Merchant
 import Dashboard from '../views/Merchant/Dashboard'
 import ProductCreate from '../views/Merchant/CreateProduct'
 
@@ -52,6 +55,11 @@ export default new Router({
       path:'/payment',
       name:'Payment',
       component:Payment
+    },
+    {
+      path:'/Order',
+      name:'Order',
+      component:Order
     },
     {
       path: '/merchant',

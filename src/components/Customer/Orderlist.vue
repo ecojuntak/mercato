@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="col-12 col-md-9 col-lg-9">
     <div class="card globalcard breadcrumbcard card-body">
       <div class="row">
         <div class="col-md-4">
-          <h5>Pesanan</h5>
+          <h5>Order</h5>
         </div>
       </div>
     </div>
@@ -41,11 +41,8 @@
               role="tabpanel"
               aria-labelledby="pesananbaru-tab"
             >
-              <div class="detailorder mt-2" >
-                <div
-                  class="row"
-                  
-                >
+              <div class="detailorder mt-2">
+                <div class="row">
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header" style="background-color: #f1f1f1">
@@ -56,49 +53,36 @@
                         </div>
                         <div class="row detail">
                           <div class="col-sm-3">02 12 1098</div>
-                          <div
-                            class="col-sm-3 bold"
-                            style="color: orangered"
-                          >Rp Total Bayar</div>
+                          <div class="col-sm-3 bold" style="color: orangered">Rp Total Bayar</div>
                           <div class="col-sm-6">
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              
                             >
                               Menunggu Pembayaran
-                              <a
-                                href=""
-                                class="alert-link"
-                              >Upload bukti pembayaran</a>
+                              <a href class="alert-link">Upload bukti pembayaran</a>
                             </div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'readyForProcess' && transaction.shipping_number !== null"
                             >
                               Barang dalam pengirima
-                              <a
-                                :href="'/customer/' + userId + '/transactions/' + transaction.id + '/tracking'"
-                                class="alert-link"
-                              >Lacak Pengiriman</a>
+                              <a href class="alert-link">Lacak Pengiriman</a>
                             </div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'acceptedByMerchant'"
                             >Sudah diterima penjual</div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'acceptedBySystem' || transaction.shipping_number === null"
                             >Sudah dibayar, menunggu diproses penjual</div>
                           </div>
                         </div>
@@ -109,20 +93,15 @@
                             <div class="row">
                               <div class="col-sm-2 col-xs-12">
                                 <div class="imgwrapper pesanan" style="padding: 0px; height: auto">
-                                  <img
-                                    :src="'/images/' + JSON.parse(order.product.images)[0]"
-                                    alt="Card image cap"
-                                  >
+                                  <img src alt="Card image cap">
                                 </div>
                               </div>
                               <div class="col-sm-6 col-xs-12">
                                 <div class="keranjang-desc-prod">
-                                  <h6>{{ order.product.name }}</h6>
-                                  <h6
-                                    style="color: #FF5205; display: inline;"
-                                  >Rp {{formatPrice( order.product.price )}}</h6>
+                                  <h6>Ulos avc</h6>
+                                  <h6 style="color: #FF5205; display: inline;">Rp 61412</h6>
                                   <br>
-                                  <small>Jumlah {{ order.quantity }}</small>
+                                  <small>Jumlah</small>
                                 </div>
                               </div>
                             </div>
@@ -141,11 +120,8 @@
               role="tabpanel"
               aria-labelledby="Konfirmasi-tab"
             >
-              <div class="detailorder mt-2" v-for="transaction in transactions">
-                <div
-                  class="row"
-                  v-if="transaction.status === 'orderSuccessed' || transaction.status === 'rejectedByAdmin' || transaction.status === 'rejectedByMerchant' || transaction.status === 'canceledBySistem' || transaction.status === 'invalidProofOfPayment'"
-                >
+              <div class="detailorder mt-2">
+                <div class="row">
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header" style="background-color: #f1f1f1">
@@ -155,75 +131,63 @@
                           <div class="col-sm-3 small">Status</div>
                         </div>
                         <div class="row detail">
-                          <div class="col-sm-3">{{ transaction.created_at }}</div>
-                          <div
-                            class="col-sm-3 bold"
-                            style="color: orangered"
-                          >Rp {{ getTotalPayment(transaction.payment)}}</div>
+                          <div class="col-sm-3">2345</div>
+                          <div class="col-sm-3 bold" style="color: orangered">Rp73454</div>
                           <div class="col-sm-6">
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-if="transaction.status === 'rejectedByAdmin'"
                             >Ditolak oleh Admin</div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'rejectedByMerchant'"
                             >Ditolak oleh Penjual</div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'invalidProofOfPayment'"
                             >Ditolak oleh Admin karena bukti pembayaran tidak valid</div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'canceledBySistem'"
                             >Tidak melakukan pembayaran melewati batas waktu pembayaran</div>
 
                             <div
                               class="alert alert-warning p-1"
                               role="alert"
                               style="font-size: x-small"
-                              v-else-if="transaction.status === 'orderSuccessed'"
                             >Transaksi Sukses</div>
                           </div>
                         </div>
                       </div>
-                      <div class="card-body" v-for="order in transaction.orders">
+                      <div class="card-body">
                         <div class="row singleorderprod" style=" padding-bottom: 10px">
                           <div class="col-md-12 col-sm-12 col-xs-6">
                             <div class="row">
-                              <a
-                                :href="'/customer/' + userId + '/transactions/' + transaction.id + '/tracking'"
-                              >
+                              <a href=" ">
                                 <div class="col-sm-2 col-xs-12">
                                   <div
                                     class="imgwrapper pesanan"
                                     style="padding: 0px; height: auto"
                                   >
                                     <img
-                                      :src="'/images/' + JSON.parse(order.product.images)[0]"
+                                      src="@/static/img/placeholder/inspirasi_1.png"
                                       alt="Card image cap"
                                     >
                                   </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                   <div class="keranjang-desc-prod">
-                                    <h6>{{ order.product.name }}</h6>
-                                    <h6
-                                      style="color: #FF5205; display: inline;"
-                                    >Rp {{formatPrice(order.product.price)}}</h6>
+                                    <h6>ulos abc</h6>
+                                    <h6 style="color: #FF5205; display: inline;">Rp 152.3452</h6>
                                     <br>
-                                    <small>Jumlah {{ order.quantity }}</small>
+                                    <small>Jumlah</small>
                                   </div>
                                 </div>
                               </a>
@@ -242,3 +206,9 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "OrderList"
+};
+</script>
