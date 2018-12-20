@@ -12,6 +12,9 @@ import Order from '../views/Customer/Order'
 // Merchant
 import Dashboard from '../views/Merchant/Dashboard'
 import ProductCreate from '../views/Merchant/CreateProduct'
+import Tracking from '../views/Customer/Tracking'
+import NewOrder from '../views/Merchant/NewOrder'
+import onprogressOrder from '../views/Merchant/OngoingOrder'
 
 Vue.use(Router)
 
@@ -60,6 +63,13 @@ export default new Router({
       component:Order
     },
     {
+      path: '/track',
+      name: 'track',
+      component: Tracking
+    },
+
+    // MERCHANT
+    {
       path: '/merchant',
       name: 'Dashboard',
       component: Dashboard
@@ -69,7 +79,18 @@ export default new Router({
       name: 'ProductCreate',
       component: ProductCreate
     },
-  
+    {
+      path:'/merchant/orders',
+      name: 'Order',
+      component:NewOrder
+    },
+    {
+      path:'/merchant/onprocess',
+      name: 'onprogressOrder',
+      component:onprogressOrder
+    }
+   
+    
     // {
     //   path: '/about',
     //   name: 'about',

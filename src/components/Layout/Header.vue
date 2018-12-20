@@ -27,9 +27,10 @@
           style="font-weight: 400; font-size: 1rem;"
         >Blog</a>
 
-        <div id="cart-icon" class="d-lg-none">
-          <cart-icon/>
+        <div class="d-lg-none carticon">
+          <CartIcon/>
         </div>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-start">
             <li class="nav-item d-lg-none dropdown">

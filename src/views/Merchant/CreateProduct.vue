@@ -20,7 +20,9 @@
                     </label>
                     <div class="col-sm-9">
                       <div class="upload-btn-wrapper">
-                        <button class="btn-upcus"></button>
+                        <button class="btn-upcus">
+                        <img src="https://img.icons8.com/wired/64/000000/box.png" alt="">
+                        </button>
                         <input id="files" name="images[]" multiple type="file">
                       </div>
                       <div id="result" class="row mt-4"></div>
@@ -123,6 +125,7 @@
                         aria-describedby="warnadasar"
                         placeholder="/kg"
                       >
+                      
                       <small
                         id="warnadasar"
                         class="form-text text-muted"
@@ -143,6 +146,13 @@
                         id="warnadasar"
                         class="form-text text-muted"
                       >Pilih warna yang paling dominan</small>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 mt-4">
+                      <label class="label">Kondisi Barang</label>
+                      <select class="form-control" name="category">
+                        <option value="Baru">Baru</option>
+                        <option value="Bekas">Bekas</option>
+                      </select>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 mt-4">
                       <label class="label">Metode Pembuatan</label>

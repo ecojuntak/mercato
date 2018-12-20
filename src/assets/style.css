@@ -446,9 +446,6 @@ form.example::after {
 }
 
 /*============SINGLE PRODUCT===========*/
-.detailproduct .carousel {
-    /*margin-top: 1em;*/
-}
 
 .detailproduct .imagesliderholder{
     border: 1px solid #e0e0e0;
@@ -489,9 +486,7 @@ form.example::after {
     cursor: pointer;
 }
 
-.detailproduct .price {
 
-}
 
 .detailreview {
     width: 100%;
@@ -506,10 +501,6 @@ form.example::after {
 .detailreview .nav-tabs .nav-link {
     border: none;
     font-size: inherit;
-}
-
-.detailreview .nav-tabs .nav-link:hover {
-
 }
 
 .detailreview .nav-item i{
@@ -694,13 +685,6 @@ form.example::after {
 
 /*// Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
-    .horizontalcard .shrink {
-
-    }
-
-    .slide {
-        padding: 1px;
-    }
 }
 
 /*=========merchantDashboard============*/
@@ -961,7 +945,6 @@ input:-webkit-autofill:focus {
     .header_area .cart-area a{
         height: 40px;
     }
-
     .globalcard .product{
         border: 1px solid rgba(0,0,0,.125);
     }

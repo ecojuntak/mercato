@@ -10,7 +10,7 @@
               <a >Produk</a>
               <ul class="sub-menu collapse show" id="produk">
                 <li><a href="/merchant">Semua Produk</a></li>
-                <li><a href="/createproduct">Tambah produk</a></li>
+                <li><a href="/product/create">Tambah produk</a></li>
                 <li><a href="/terjual">Produk terjual</a></li>
               </ul>
             </li>
@@ -18,8 +18,8 @@
             <li data-toggle="collapse" data-target="#pemesanan" class="collapsed">
               <a  >Pemesanan</a>
               <ul class="sub-menu collapse show" id="pemesanan">
-                <li><a href="/newOrder">Order Masuk</a></li>
-                <li><a href="/ongoingOrder">Order yang Sedang Diproses</a></li>
+                <li><a href="/merchant/orders">Order Masuk</a></li>
+                <li><a href="/merchant/onprocess">Order yang Sedang Diproses</a></li>
                 <li><a href="">Order Berhasil</a></li>
                 <li><a href="">Order Dibatalkan</a></li>
                 <li><a href="">Order Gagal</a></li>
@@ -34,8 +34,12 @@
 </div>
 </template>
 <script>
+import SideBar from "@/components/Merchant/SideBar";
 export default {
-    name:'SiderBar'
+    name:'SiderBar',
+    components: {
+      SideBar
+  }
 }
 </script>
 

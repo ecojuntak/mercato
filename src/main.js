@@ -4,6 +4,9 @@ import router from './routers/router'
 import store from './store'
 import Vuelidate from 'vuelidate'
 import './registerServiceWorker'
+import bContainer from 'bootstrap-vue/es/components/layout/container';
+
+Vue.component('b-container', bContainer);
 
 import 'bootstrap/dist/css/bootstrap.css'
 require('@/assets/css/core-style.css')

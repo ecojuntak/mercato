@@ -65,9 +65,9 @@
     <SideBar/> 
       <!--//sidebar-->
       <!--content-->
-    
+    <Products/>
         <!-- <AllProduct/> -->
-        <Product/>
+      
       </div>
     </div>
   
@@ -75,11 +75,10 @@
 
 <script>
 import SideBar from '@/components/Merchant/SideBar'
-
-import Product from '@/components/Swipper/ProductSlider'
+import Products from '@/components/Merchant/ProductList'
 export default {
     components:{
-        SideBar, Product
+        SideBar, Products
     }
 };
 </script>
