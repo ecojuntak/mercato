@@ -236,6 +236,7 @@
         </div>
       </div>
     </div>
+  
   </div>
 </template>
 
@@ -276,6 +277,8 @@ export default {
     this.getProduct();
   }
 };
+
+
 </script>
 
 <style scoped>

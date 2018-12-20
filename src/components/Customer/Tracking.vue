@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-sm-5 col-xs-12">
                       <div class="keranjang-desc-prod">
-                        <h6>nama prod</h6>
+                        <h6>nama produk</h6>
                         <h6 style="color: #FF5205; display: inline;">Rp ss</h6>
                         <small>/ unit</small>
                         <br>

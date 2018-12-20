@@ -61,7 +61,7 @@
                               style="font-size: x-small"
                             >
                               Menunggu Pembayaran
-                              <a href class="alert-link">Upload bukti pembayaran</a>
+                              <a href="/payment" class="alert-link">Upload bukti pembayaran</a>
                             </div>
 
                             <div
