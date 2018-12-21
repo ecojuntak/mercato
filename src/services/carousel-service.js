@@ -1,7 +1,7 @@
-import publicApi from '@/services/public-api'
+import api from '@/services/api'
 
 export default {
   getCarousels () {
-    return publicApi().get('carousels');
+    return api().get('carousels');
   }
 }
