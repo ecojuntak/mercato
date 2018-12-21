@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+  <div class="container">
     <div class="row">
       <SideBar/>
       <div class="col-md-9 card globalcard" style="display: grid">
@@ -8,7 +8,7 @@
             <div class="card-header">
               <h6>Order Sedang di Proses</h6>
             </div>
-            
+
             <div class>
               <div class="card-body" style="border-bottom: 1px #c5c5c5 solid; padding-bottom: 10px">
                 <div class="row mt-2">
@@ -45,13 +45,18 @@
                       <div>
                         <div class="quantity col-md-2">
                           <button
-                            class="btn btn-success btn-sm mb-2"
-                            style="display: block;"
-                          >no. Resi</button>
+                              class="btn btn-success btn-sm mb-2"
+                              style="display: block;"
+                              data-toggle="modal"
+                              data-target="#resiModal"
+                          >no. Resi
+                          </button>
+                          <ResiModal/>
                           <button
-                            class="btn btn-success btn-sm mb-2"
-                            style="display: block; width: 90px"
-                          >Terima</button>
+                              class="btn btn-success btn-sm mb-2"
+                              style="display: block; width: 90px"
+                          >Terima
+                          </button>
                           <button class="btn btn-danger btn-sm" style="width: 90px">Tolak</button>
                         </div>
                       </div>
@@ -67,12 +72,13 @@
   </div>
 </template>
 <script>
-import SideBar from "@/components/Merchant/SideBar";
-import noOrder from "@/components/textholder";
-export default {
-  components: {
-    SideBar,
-    noOrder
-  }
-};
+    import SideBar from "@/components/Merchant/SideBar";
+    import ResiModal from "@/components/Modal/UploadResi.vue";
+
+    export default {
+        components: {
+            SideBar,
+            ResiModal
+        }
+    };
 </script>

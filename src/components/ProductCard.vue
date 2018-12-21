@@ -1,8 +1,8 @@
 <template>
-  <div class="card product">
+  <div class="card product" >
     <router-link :to="'/products/' + id ">
-      <div class="imgwrapper">
-        <img :src="assetServerURL + image">
+      <div class="imgwrapper" >
+        <img :src="assetServerURL + image" >
       </div>
       <div class="card-body">
         <p class="card-title productname">{{ name }}</p>
