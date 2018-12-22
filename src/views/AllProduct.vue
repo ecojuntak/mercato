@@ -40,33 +40,8 @@
                           <a class="dropdown-item" @click="filterProductByCategory('')">Semua Metode</a></li>
                       </ul>
                     </li>
-                    <li>
-                      <a
-                          class="nav-link dropdown-toggle"
-                          id="navbarDropdown1"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">Urutkan Berdasarkan</a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" @click="sortProductByName('asc')">Nama A-Z</a>
-                        <a class="dropdown-item" @click="sortProductByName('des')">Nama Z-A</a>
-                        <a class="dropdown-item" @click="sortProductByPrice('asc')">Harga Termurah</a>
-                        <a class="dropdown-item" @click="sortProductByPrice('des')">Harga Termahal</a>
-                      </div>
-                    </li>
-                    <li>
-                      <form class="form-inline my-2 my-lg-0">
-                        <input
-                            class="form-control form-control-sm mr-sm-2"
-                            type="search"
-                            placeholder="Filter Nama"
-                            aria-label="Search"
-                            v-model="searchName"
-                            @input="filterProductByName"
-                        >
-                      </form>
-                    </li>
+
+
                   </ul>
                 </div>
               </nav>
