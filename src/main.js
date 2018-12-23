@@ -5,7 +5,6 @@ import store from './store'
 import Vuelidate from 'vuelidate'
 import './registerServiceWorker'
 
-
 import 'bootstrap/dist/css/bootstrap.css'
 require('@/assets/css/core-style.css')
 require('@/assets/style.css')
