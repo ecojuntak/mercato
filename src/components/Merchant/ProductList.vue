@@ -1,100 +1,104 @@
 <template>
-<div>
-    <div class="breadcumb_area bg-img" style="background-image: url(/user-assets/img/bg-img/breadcumb.jpg);">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12">
-        <div class="page-title text-center">
-          <h2>My Product</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="card globalcard col-12 col-md-9 col-lg-9">
+    <div class="card-header px-0">
+      <nav
+        class="navbar navbar-expand-lg mproduct p-1"
+        style="background-color: transparent; border:none"
+      >
+        <h5 class="mr-3">Produk</h5>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
 
-<section class="shop_grid_area section-padding-80">
-  <div class="container">
-    <div class="row">
-      
-      @include('users.merchants.sidebar')
-
-      <div class="col-12 col-md-8 col-lg-9">
-        <div class="shop_grid_product_area">
-          <div class="row">
-            <div class="col-12">
-              <div class="product-topbar d-flex align-items-center justify-content-between">
-                <!-- Total Products -->
-                <div class="total-products">
-                  <p>You have <span>{{ count($products) }} </span> Products </p>
-                </div>
-                <!-- Sorting -->
-                <div class="product-sorting d-flex">
-                  <p>Sort by:</p>
-                  <form action="#" method="get">
-                    <select name="select" id="sortByselect">
-                        <option value="value">Highest Rated</option>
-                        <option value="value">Newest</option>
-                        <option value="value">Price: $$ - $</option>
-                        <option value="value">Price: $ - $$</option>
-                    </select>
-                    <input type="submit" class="d-none" value="">
-                  </form>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="d-lg-none">
+              <a :href="'/products/create'" class="btn btn-sm btn-success">Tambah produk</a>
+            </li>
+            <li>
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >Kategori</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  @click="filterProductByCategory('Alat Tenun Bukan Mesin')"
+                >Alat Tenun Bukan Mesin</a>
+                <a class="dropdown-item" @click="filterProductByCategory('Tradisional')">Tradisional</a>
+                <a class="dropdown-item" @click="filterProductByCategory('Mesin')">Mesin</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" @click="filterProductByCategory('')">Semua kategory</a>
               </div>
-            </div>
-          </div>
-
-          <div class="row">
-            @foreach ($products as $product)
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="single-product-wrapper">
-                <a href="{{ url('/products', $product->id)}}">
-                  <div class="product-img">
-                    @if(json_decode($product->images))
-                      <img src="{{ '/images/' . json_decode($product->images)[0] }}" alt="">    
-                    @else
-                      <img src="{{ '/images/no-image.jpg'}}" alt="">   
-                    @endif
-                  </div>
-
-                  <div class="product-description">
-                    <a href="{{ url('/products', $product->id)}}"> <h6>{{ $product->name }}</h6> </a>
-                    <p class="product-price"> IDR Harga</p>
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                      <!-- Add to Cart -->
-                      <div class="add-to-cart-btn">
-                        <a href="{{ url('products/edit', $product->id)}}" class="btn essence-btn">Edit</a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+            </li>
+            <li>
+              <a
+                class="nav-link dropdown-toggle"
+                id="navbarDropdown1"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >Urutkan Berdasarkan</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown1" style="left: 156px;">
+                <a class="dropdown-item" @click="sortProductByName('asc')">Nama A-Z</a>
+                <a class="dropdown-item" @click="sortProductByName('des')">Nama Z-A</a>
+                <a class="dropdown-item" @click="sortProductByPrice('asc')">Harga Termurah</a>
+                <a class="dropdown-item" @click="sortProductByPrice('des')">Harga Termahal</a>
               </div>
-            </div>
-            @endforeach
-          </div>
-        </div>
-        <!-- Pagination -->
-        <nav aria-label="navigation">
-          <ul class="pagination mt-50 mb-70">
-            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">...</a></li>
-            <li class="page-item"><a class="page-link" href="#">21</a></li>
-            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+            </li>
           </ul>
-        </nav>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control form-control-sm mr-sm-2"
+              type="search"
+              placeholder="Cari Produk"
+              aria-label="Search"
+              v-model="searchName"
+              @input="filterProductByName"
+            >
+          </form>
+        </div>
+      </nav>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div v-for="product in products" class="col-6 col-md-3 px-1">
+          <div class="card products">
+            <a :href="'/products/' + product.id">
+              <div class="imgwrapper">
+                <img :src="'/images/' + JSON.parse(product.images)[0]" alt="Card image cap">
+              </div>
+
+              <div class="card-body">
+                <p class="card-title productname">{{ product.name }}</p>
+                <h6 style="color: #ff5205">Rp {{ product.price }}</h6>
+                <p class="card-text float-right">
+                  <small class="text-muted">Stock {{ product.stock }}</small>
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
-</div>
 </template>
 
 <script>
 export default {
-    
-}
+  name: "ProductList"
+};
 </script>

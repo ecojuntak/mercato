@@ -1,13 +1,16 @@
-import privateApi from '@/services/private-api'
+import api from '@/services/api'
 
 export default {
   getProductByMerchant () {
-    return privateApi().get('merchant/products');
+    return api().get('merchant/products');
   },
-  getNewProduct() {
-    return privateApi().get('new-products');
+  getNewProduct(param) {
+    return api().get('new-products');
   },
   getAllProducts() {
-    return privateApi().get('all-products');
+    return api().get('all-products');
+  },
+  getProduct(params) {
+    return api().get('products/' + params);
   }
 }

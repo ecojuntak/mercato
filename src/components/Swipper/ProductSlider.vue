@@ -5,14 +5,14 @@
         <h5 style="float: left"> {{ title }}</h5>
         <h6 style="float: right">
           <router-link to="/products">
-            <a style="color: -webkit-link">Lihat Semua Produk</a>
+            <a style="color: -webkit-link">Lihat semua produk</a>
           </router-link>
         </h6>
       </div>
       <div class="card-body globalcardbody">
         <div class="swiper-container">
           <swiper :options="swiperOption">
-            <swiper-slide v-for="product in products">
+            <swiper-slide v-for="product in products" >
               <product-card
                 :id="product.id"
                 :name="product.name"

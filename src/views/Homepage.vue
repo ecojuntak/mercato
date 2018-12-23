@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-2" >
+  <div class="mx-2">
     <div>
       <TopBanner/>
     </div>
@@ -7,27 +7,23 @@
       <ProductSlider :title="'Produk Terbaru'"/>
     </div>
     <div>
-       <InspirasiBanner/>
+      <InspirasiBanner/>
     </div>
-
   </div>
-
 </template>
 
 
 
 <script>
-  import TopBanner from "@/components/Swipper/Mainbanner"
-  import ProductSlider from "@/components/Swipper/ProductSlider"
-  import InspirasiBanner from "@/components/Swipper/InspirasiBanner"
+import TopBanner from "@/components/Swipper/Carousel";
+import ProductSlider from "@/components/Swipper/ProductSlider";
+import InspirasiBanner from "@/components/Swipper/InspirasiBanner";
 
-
-    export default {
-      components:{TopBanner, ProductSlider, InspirasiBanner},
-        name: "Homepage"
-    }
+export default {
+  components: { TopBanner, ProductSlider, InspirasiBanner },
+  name: "Homepage"
+};
 </script>
 
 <style scoped>
-
 </style>

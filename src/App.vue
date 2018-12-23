@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <main style="min-height: 400px">
+    <main style="min-height: 400px; position:relative;">
       <router-view/>
     </main>
     <Footer/>
@@ -22,7 +22,6 @@ body {
 }
 
 
-
 </style>
 
 <script>
@@ -38,4 +37,6 @@ export default {
     return { visible: false };
   }
 };
+
+
 </script>
