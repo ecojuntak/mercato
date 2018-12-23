@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-3 col-lg-3 d-none d-sm-block">
+  <div class="col-md-3 col-lg-3 d-none d-sm-block">
   <div class="merchant-sidebar">
     <div class="card globalcard">
       <div class="card-body">
@@ -34,12 +34,9 @@
 </div>
 </template>
 <script>
-import SideBar from "@/components/Merchant/SideBar";
+
 export default {
-    name:'SiderBar',
-    components: {
-      SideBar
-  }
+    name:'SiderBar'
 }
 </script>
 

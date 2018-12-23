@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <main style="min-height: 400px">
+    <main style="min-height: 400px; position:relative;">
       <router-view/>
     </main>
     <Footer/>
@@ -20,7 +20,6 @@ body {
   color: #2c3e50;
   font-size: 13px;
 }
-
 
 
 </style>
