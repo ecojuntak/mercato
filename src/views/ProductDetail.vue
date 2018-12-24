@@ -101,27 +101,9 @@
                   </div>
                 </div>
 
-                <!--@role('merchant')-->
-                <!--<div class="cart-fav-box d-flex align-items-center mt-4">-->
-                <!--<a href="{{ url('/products/edit', $product->id) }}" class="btn essence-btn">Edit</a>-->
-                <!--<form action="{{ url('/products/delete', $product->id)}}" method="POST">-->
-                <!--{{ csrf_field() }}-->
-                <!--<button type="submit" class="btn essence-btn ml-4">Delete</button>-->
-                <!--</form>-->
-                <!--</div>-->
-                <!--@else @if(Auth::check())-->
-                <!--<div id="add-to-cart-button">-->
-                <!--<add-to-cart-button :max-unit="{{$product->stock}}" :user-id="{{Auth::user()->id}}" :product-id="{{$product->id}}" />-->
-                <!--</div>-->
-                <!--@else-->
                 <div>
-                  <button
-                    class="btn essence-btn mt-4"
-                    data-toggle="modal"
-                    data-target="#loginModal"
-                  >Pesan Barang</button>
+                  <button class="btn essence-btn mt-4" type="button" v-on:click="addToCart">Pesan Barang</button>
                 </div>
-                <!--@endif @endrole-->
               </div>
               <div class="col-md-2 d-none d-md-block">
                 <div class="card">
@@ -243,6 +225,7 @@
 <script>
 import ProductSlider from "@/components/Swipper/ProductSlider";
 import productService from "@/services/product-service";
+import cartService from "@/services/cart-service"
 
 export default {
   name: "DetailProduct",
@@ -252,8 +235,7 @@ export default {
   data() {
     return {
       product: {},
-      assetServerURL: (this.assetServerURL =
-        process.env.VUE_APP_ASSET_SERVER_BASE_URL + "products/")
+      assetServerURL: process.env.VUE_APP_ASSET_SERVER_BASE_URL + "products/"
     };
   },
   methods: {
@@ -262,7 +244,6 @@ export default {
         .getProduct(this.$route.params.id)
         .then(res => {
           this.product = res.data.product;
-          console.log(this.product);
         })
         .catch(err => {
           console.log(err);
@@ -271,6 +252,17 @@ export default {
     formatPrice(value) {
       let val = (value / 1).toFixed().replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    addToCart() {
+      const payload = {
+        product_id: this.product.id,
+        quantity: 1
+      }
+      cartService.addToCart(payload).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
     }
   },
   mounted() {
